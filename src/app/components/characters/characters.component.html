@@ -1,0 +1,11 @@
+<p>characters works!</p>
+<!-- <div *ngFor="let singleCharacter of character1$ | async">
+  {{ singleCharacter }}
+  <div *ngFor="let characterInf of singleCharacter">
+    {{ characterInf }}
+  </div>
+</div> -->
+
+<div *ngFor="let singleCharacter of characters$ | async">
+  {{ singleCharacter.name }}
+</div>

@@ -29,6 +29,7 @@ export function CharacterReducer(
     case CharacterActionTypes.LOAD_CHARACTERS_SUCCESS:
       return {
         ...state,
+        content: action.payload,
         loading: false,
       };
     case CharacterActionTypes.LOAD_CHARACTERS_FAIL:

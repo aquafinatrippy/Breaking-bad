@@ -1,28 +1,27 @@
 import { Action } from '@ngrx/store';
 import { Character } from '../models/character';
-import { type } from 'os';
 
 export enum CharacterActionTypes {
-  LOAD_CHARACTERS = '[CHARACTERS]',
+  LOAD_CHARACTERS = '[CHARACTERS] load',
   LOAD_CHARACTERS_SUCCESS = '[CHARACTERS] Load characters',
   LOAD_CHARACTERS_FAIL = '[CHARACTERS Load characters failed',
 }
 
-export class LOAD_CHARACTERS implements Action {
+export class LoadCharacters implements Action {
   readonly type = CharacterActionTypes.LOAD_CHARACTERS;
 }
 
-export class LOAD_CHARACTERS_SUCCESS implements Action {
+export class LoadCharactersSuccess implements Action {
   readonly type = CharacterActionTypes.LOAD_CHARACTERS_SUCCESS;
   constructor(public payload: Array<Character>) {}
 }
 
-export class LOAD_CHARACTERS_FAIL implements Action {
+export class LoadCharactersFail implements Action {
   readonly type = CharacterActionTypes.LOAD_CHARACTERS_FAIL;
   constructor(public payload: Error) {}
 }
 
 export type CharacterActions =
-  | LOAD_CHARACTERS
-  | LOAD_CHARACTERS_SUCCESS
-  | LOAD_CHARACTERS_FAIL;
+  | LoadCharacters
+  | LoadCharactersSuccess
+  | LoadCharactersFail;
