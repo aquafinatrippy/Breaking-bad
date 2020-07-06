@@ -11,16 +11,12 @@ import { Character } from '../../store/models/character';
   styleUrls: ['./characters.component.sass'],
 })
 export class CharactersComponent implements OnInit, OnDestroy {
-  character1$: Observable<Array<Character>>;
-  subscription: Subscription;
-  characters$: Observable<any[]>;
+  characters$: Observable<Array<Character>>;
 
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.store.dispatch({ type: '[CHARACTERS] load' });
-    this.character1$ = this.store.select(store => store.characters.content)
-    console.log(this.character1$)
     this.characters$ = this.store.select(store => store.characters.content)
   }
 
