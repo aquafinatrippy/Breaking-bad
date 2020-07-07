@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 
@@ -10,7 +10,7 @@ import { Character } from '../../store/models/character';
   templateUrl: './characters.component.html',
   styleUrls: ['./characters.component.sass'],
 })
-export class CharactersComponent implements OnInit, OnDestroy {
+export class CharactersComponent implements OnInit {
   characters$: Observable<Array<Character>>;
 
   constructor(private store: Store<AppState>) {}
@@ -20,5 +20,4 @@ export class CharactersComponent implements OnInit, OnDestroy {
     this.characters$ = this.store.select(store => store.characters.content)
   }
 
-  ngOnDestroy(): void {}
 }
