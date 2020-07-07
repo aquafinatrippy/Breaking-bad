@@ -1,11 +1,12 @@
-<p>characters works!</p>
-<!-- <div *ngFor="let singleCharacter of character1$ | async">
-  {{ singleCharacter }}
-  <div *ngFor="let characterInf of singleCharacter">
-    {{ characterInf }}
+<div class="content">
+  <div class="wrapper">
+    <div *ngFor="let singleCharacter of characters$ | async | slice: 0:10" class="card">
+      {{ singleCharacter.name }}
+      <img src="{{singleCharacter.img}}" alt="" srcset="">
+      <div class="info">
+        <h1>{{ singleCharacter.name }}</h1>
+        <p>{{ singleCharacter.nickname }}</p>
+      </div>
+    </div>
   </div>
-</div> -->
-
-<div *ngFor="let singleCharacter of characters$ | async">
-  {{ singleCharacter.name }}
 </div>
