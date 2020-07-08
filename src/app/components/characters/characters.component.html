@@ -1,8 +1,34 @@
+<div class="pagination">
+  <button
+    mat-raised-button
+    (click)="backward()"
+    *ngIf="pageNr == 1; else notFirst"
+    disabled
+  >
+    Back
+  </button>
+  <ng-template #notFirst>
+    <button mat-raised-button (click)="backward()">
+      Back
+    </button>
+  </ng-template>
+  <p class="pageNr">
+    {{ pageNr }}
+  </p>
+
+  <button mat-raised-button (click)="forward()">Next</button>
+</div>
+
 <div class="content">
   <div class="wrapper">
-    <div *ngFor="let singleCharacter of characters$ | async | slice: 0:10" class="card">
+    <div
+      *ngFor="
+        let singleCharacter of characters$ | async | slice: sliceStart:sliceEnd
+      "
+      class="card"
+    >
       {{ singleCharacter.name }}
-      <img src="{{singleCharacter.img}}" alt="" srcset="">
+      <img src="{{ singleCharacter.img }}" alt="" srcset="" />
       <div class="info">
         <h1>{{ singleCharacter.name }}</h1>
         <p>{{ singleCharacter.nickname }}</p>

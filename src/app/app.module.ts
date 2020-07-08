@@ -16,6 +16,7 @@ import { environment } from '../environments/environment';
 import { SearchResultComponent } from './components/search-result/search-result.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MatIconModule} from '@angular/material/icon';
+import {MatButtonModule} from '@angular/material/button';
 
 
 
@@ -38,7 +39,8 @@ import {MatIconModule} from '@angular/material/icon';
     EffectsModule.forRoot([CharEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     MatIconModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
