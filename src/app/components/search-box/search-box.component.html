@@ -1,1 +1,12 @@
-<p>search-box works!</p>
+<div class="search-container">
+  <input
+    #box
+    type="text"
+    placeholder="Search.."
+    (keyup.enter)="onEnter(box.value)"
+  />
+  <button type="submit" (click)="onEnter(box.value)">
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
+<a type="submit" routerLink="/x">click</a>

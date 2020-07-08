@@ -13,6 +13,10 @@ import { EffectsModule } from '@ngrx/effects';
 import { CharEffects } from './store/effects/character.effect';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { SearchResultComponent } from './components/search-result/search-result.component';
+import { AppRoutingModule } from './app-routing.module';
+import {MatIconModule} from '@angular/material/icon';
+
 
 
 
@@ -22,7 +26,8 @@ import { environment } from '../environments/environment';
   declarations: [
     AppComponent,
     SearchBoxComponent,
-    CharactersComponent
+    CharactersComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +36,9 @@ import { environment } from '../environments/environment';
     HttpClientModule,
     MatInputModule,
     EffectsModule.forRoot([CharEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    MatIconModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
