@@ -1,18 +1,16 @@
 <div class="wholePage">
+  
   <div class="search-bar">
     <img src="../assets/img/logo.png" alt="" srcset="" />
-    <app-search-box class="searchbox"></app-search-box>
-    <a mat-stroked-button routerLink="/">Characters</a>
-    <a mat-stroked-button routerLink="/episodes" >Episodes</a>
-    
-  </div>
-  <div>
-    <button mat-mini-fab disabled style="background: white;">
+    <div class="routerChangeBtn">
+    <button mat-mini-fab style="background: white;" routerLink="/">
       <mat-icon>person</mat-icon>
     </button>
-    <button mat-mini-fab disabled style="background: white;">
+    <button mat-mini-fab style="background: white;" routerLink="/episodes">
       <mat-icon>movie</mat-icon>
     </button>
+  </div>
+    <app-search-box class="searchbox"></app-search-box>
   </div>
 
   <router-outlet></router-outlet>
