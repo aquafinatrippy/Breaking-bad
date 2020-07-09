@@ -21,7 +21,7 @@
 <ng-template #load>
   <mat-spinner></mat-spinner>
 </ng-template>
-<div class="content" *ngIf="loadingState == false; else load">
+<div class="content" *ngIf="!loadingState; else load">
   <div class="wrapper">
     <div
       *ngFor="
