@@ -1,16 +1,17 @@
-<p>episodes works!</p>
 
-<table>
-    <tr>
-        <th>Title</th>
-        <th>Season</th>
-        <th>Episode</th>
-        <th>Date</th>
-    </tr>
-    <tr *ngFor="let episode of episodes$ | async">
-        <td>{{episode.title}}</td>
-        <td>{{episode.season}}</td>
-        <td>{{episode.episode}}</td>
-        <td>{{episode.air_date}}</td>
-    </tr>
-</table>
+<div class="container">
+    <ul class="responsive-table">
+      <li class="table-header">
+        <div class="col col-1">Title</div>
+        <div class="col col-2">Season</div>
+        <div class="col col-3">Episode</div>
+        <div class="col col-4">Date</div>
+      </li>
+      <li class="table-row"  *ngFor="let episode of episodes$ | async">
+        <div class="col col-1" >{{episode.title}}</div>
+        <div class="col col-2" >{{episode.season}}</div>
+        <div class="col col-3" >{{episode.episode}}</div>
+        <div class="col col-4" >{{episode.air_date}}</div>
+      </li>
+    </ul>
+  </div>

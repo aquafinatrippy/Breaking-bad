@@ -22,6 +22,7 @@ import { EpisodeEffects } from '../app/store/effects/episode.effect';
 import { EpisodeReducer } from './store/reducers/episodes.reducer';
 import {MatTableModule} from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     AppRoutingModule,
     MatButtonModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [],
   bootstrap: [AppComponent],

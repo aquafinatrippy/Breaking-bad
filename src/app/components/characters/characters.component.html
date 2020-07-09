@@ -18,8 +18,10 @@
 
   <button mat-raised-button (click)="forward()">Next</button>
 </div>
-
-<div class="content">
+<ng-template #load>
+  <mat-spinner></mat-spinner>
+</ng-template>
+<div class="content" *ngIf="loadingState == false; else load">
   <div class="wrapper">
     <div
       *ngFor="

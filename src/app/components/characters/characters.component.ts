@@ -15,22 +15,23 @@ export class CharactersComponent implements OnInit {
   sliceStart: number = 0;
   sliceEnd: number = 10;
   pageNr: number = 1;
+  loadingState: Boolean;
 
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
     this.store.dispatch({ type: '[CHARACTERS] load' });
-    this.characters$ = this.store.select(store => store.characters.content)
+    this.characters$ = this.store.select((store) => store.characters.content);
+    this.store.select((store) => store.characters.loading).subscribe(val => this.loadingState = val)
   }
-  forward(){
+  forward() {
     this.sliceStart += 10;
     this.sliceEnd += 10;
     this.pageNr += 1;
   }
-  backward(){
+  backward() {
     this.sliceStart -= 10;
     this.sliceEnd -= 10;
     this.pageNr -= 1;
   }
-
 }
