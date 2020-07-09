@@ -20,6 +20,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { EpisodesComponent } from './components/episodes/episodes.component';
 import { EpisodeEffects } from '../app/store/effects/episode.effect';
 import { EpisodeReducer } from './store/reducers/episodes.reducer';
+import {MatTableModule} from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -46,6 +49,8 @@ import { EpisodeReducer } from './store/reducers/episodes.reducer';
     MatIconModule,
     AppRoutingModule,
     MatButtonModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent],
