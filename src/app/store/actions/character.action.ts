@@ -4,8 +4,7 @@ import { Character } from '../models/character';
 export enum CharacterActionTypes {
   LOAD_CHARACTERS = '[CHARACTERS] load',
   LOAD_CHARACTERS_SUCCESS = '[CHARACTERS] Load characters',
-  LOAD_CHARACTERS_FAIL = '[CHARACTERS] Load characters failed',
-  SEARCH_CHARACTERS = '[CHARACTERS] search'
+  LOAD_CHARACTERS_FAIL = '[CHARACTERS] Load characters failed'
 }
 
 export class LoadCharacters implements Action {
@@ -22,14 +21,8 @@ export class LoadCharactersFail implements Action {
   constructor(public payload: Error) {}
 }
 
-export class SearchCharacters implements Action{
-  readonly type = CharacterActionTypes.SEARCH_CHARACTERS;
-  constructor(public payload: Array<Character>){}
-
-}
 
 export type CharacterActions =
   | LoadCharacters
   | LoadCharactersSuccess
-  | LoadCharactersFail
-  | SearchCharacters;
+  | LoadCharactersFail;
